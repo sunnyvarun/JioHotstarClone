@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>JioHotstar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scrollbar-width: 0px;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* nav  */
+    .nav {
+      width: 7vw;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .logo {
+      width: 50px;
+      margin-bottom: 120px;
+    }
+
+    .icons {
+      font-size: 17px;
+      color: gray;
+      height: 30px;
+      cursor: pointer;
+    }
+
+    .icons:hover {
+      font-size: 20px;
+      color: white;
+      transition: 0.1s all ease;
+    }
+
+    .smil {
+      height: 20px
+    }
+
+    .smil:hover {
+      height: 25px
+    }
+
+    /* Body  */
+    .main {
+      width: 97vw;
+      float: right;
+      background-color: black;
+    }
+
+    /* section1  */
+    .section1 {
+      width: 85%;
+      height: 250px;
+      background-color: rgb(16, 16, 24);
+      border-radius: 20px;
+    }
+
+    .sec1 {
+      height: 100%;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+
+    .sec1r {
+      width: 400px;
+      color: white;
+    }
+
+    .trailer {
+      background: #009FFF;
+      background: -webkit-linear-gradient(to right, #0059ff, #ef0323);
+      background: linear-gradient(to right, #0059ff, #ef0323);
+      border: none;
+      font-size: 25px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    /* section2  */
+    .section2 {
+      min-height: 100vh;
+      width: 90%;
+      background-color: rgb(1, 1, 1);
+      border-radius: 10px;
+    }
+
+    .salaar {
+      width: 90vw;
+      position: sticky;
+      top: 10px;
+      border-radius: 20px;
+    }
+
+    /* section2all  */
+    .section2all {
+      width: 90vw;
+      min-height: 400px;
+      padding: 20px;
+      position: relative;
+      bottom: 400px;
+      background: linear-gradient(to bottom, transparent, black, black, black, black, black, black, black, black, black, black, black, black);
+    }
+
+    /* section2-1  */
+    .salaarwatch {
+      width: 350px;
+      font-size: 20px;
+      padding: 10px 100px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      background: -webkit-linear-gradient(to right, #0059ff, #ef0323);
+      background: linear-gradient(to right, #0059ff, #ef0323);
+    }
+
+    .beginning {
+      width: 350px;
+      background-color: rgba(119, 119, 119, 0.399);
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px;
+    }
+
+    .plusbtn {
+      width: 49px;
+      height: 49px;
+      border: none;
+      border-radius: 10px;
+      background-color: rgba(119, 119, 119, 0.399);
+      padding-top: 0;
+    }
+
+    .section2-1 {
+      position: relative;
+    }
+
+    .pop {
+      overflow: scroll;
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      width: 350px;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .popsimg {
+      width: 75px;
+      cursor: pointer;
+    }
+
+    .popsimg:hover {
+      scale: 1.1;
+      transition: 0.2s all ease;
+    }
+
+    /* section2-2  */
+    .section2-2 {
+      width: 100%;
+      overflow-x: scroll;
+    }
+
+    .heading {
+      color: white;
+    }
+
+    .suggetions {
+      overflow-x: scroll;
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+
+    .continue {
+      position: relative;
+    }
+
+    .iconp {
+      position: absolute;
+      top: 55%;
+      left: 5%;
+      font-size: 26px;
+      color: white;
+      text-shadow: 0 0 30px black;
+    }
+
+    .continue:hover {
+      scale: 1.1;
+      transition: 0.4s all ease;
+    }
+
+    .contimgs {
+      width: 232px;
+      border-radius: 6px;
+      border-bottom: 3px solid;
+      border-image: linear-gradient(to right, rgb(0, 159, 239) 60%, transparent 0%) 1;
+    }
+
+    /* section2-3  */
+    .topmovies {
+      width: 190px;
+      height: 250px;
+      border-radius: 8px;
+      margin-left: 17px;
+      position: relative;
+    }
+
+    .topmovies:hover {
+      scale: 1.1;
+      transition: 0.4s all ease;
+    }
+
+    .top1 {
+      background-image: url(images/topsalaar.png);
+      background-size: cover;
+    }
+
+    .top2 {
+      background-image: url(images/topmsd.png);
+      background-size: cover;
+    }
+
+    .top3 {
+      background-image: url(images/toptukra.png);
+      background-size: cover;
+    }
+
+    .top4 {
+      background-image: url(images/avesham.png);
+      background-size: cover;
+    }
+
+    .top5 {
+      background-image: url(images/prem.png);
+      background-size: cover;
+    }
+
+    .top6 {
+      background-image: url(images/manju.png);
+      background-size: cover;
+    }
+
+    .top7 {
+      background-image: url(images/lubber.png);
+      background-size: cover;
+    }
+
+    .top8 {
+      background-image: url(images/zara.png);
+      background-size: cover;
+    }
+
+    .top9 {
+      background-image: url(images/12th.png);
+      background-size: cover;
+    }
+
+    .top10 {
+      background-image: url(images/sarf.png);
+      background-size: cover;
+    }
+
+    .topmovies::after {
+      font-size: 130px;
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      top: 100px;
+      left: -30px;
+    }
+
+    .top1::after {
+      content: '1';
+    }
+
+    .top2::after {
+      content: '2';
+    }
+
+    .top3::after {
+      content: '3';
+    }
+
+    .top4::after {
+      content: '4';
+    }
+
+    .top5::after {
+      content: '5';
+    }
+
+    .top6::after {
+      content: '6';
+    }
+
+    .top7::after {
+      content: '7';
+    }
+
+    .top8::after {
+      content: '8';
+    }
+
+    .top9::after {
+      content: '9';
+    }
+
+    .top10::after {
+      content: '10';
+    }
+
+    /* section2-4  */
+    .Sports {
+      position: relative;
+    }
+
+    .iconn {
+      position: absolute;
+      top: 55%;
+      left: 5%;
+      font-size: 26px;
+      color: white;
+      text-shadow: 0 0 30px black;
+    }
+
+    .Sports:hover {
+      scale: 1.1;
+      transition: 0.4s all ease;
+    }
+
+    .sportsimgs {
+      width: 225px;
+      border-radius: 6px;
+    }
+
+    /* section2-5  */
+    .latestimgs {
+      width: 158px;
+    }
+
+    .latestimgs:hover {
+      scale: 1.1;
+      transition: 0.4s all ease;
+    }
+
+    /* section2-6 */
+    .live {
+      position: absolute;
+      top: 95px;
+      right: 12px;
+      text-shadow: 0 0 20pc black;
+    }
+    .iconl {
+      position: absolute;
+      top: 75%;
+      left: 5%;
+      font-size: 26px;
+      color: white;
+      text-shadow: 0 0 30px black;
+    }
+
+    /* footer  */
+    .footer {
+      width: 100%;
+      height: 400px;
+      padding: 100px;
+      border-top: 1px solid gray;
+    }
+    @media(max-width:1025px){
+      .section1{
+        height: 200px;
+      }
+      .footer{
+        width: 100%;
+        height: 700px;
+      }
+      .footerup{
+        display: flex;
+        flex-direction: column;
+      }
+      .footerlower{
+        display: flex;
+        flex-direction: column;
+      }
+      .apps{
+        display: flex;
+        flex-direction: column;
+      }
+      .section2all{
+        position: relative;
+        bottom: 200px;
+      }
+      .salaarwatch{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
+        padding: 0;
+      }
+      .beginning{
+        width: 200px;
+        height: 50px;
+        font-size:14px;
+        padding: 0;
+      }
+    }
+    @media(max-width:900px){
+      .section1{
+        height: 150px;
+      }
+      .trailer{
+        width: 100px;
+        height: 35px;
+        font-size: 15px;
+        padding: 0px;
+      }
+      .section2all{
+        position: relative;
+        bottom: 150px;
+      }
+      .pop{
+        width: 270px;
+        height: 70px;
+      }
+    }
+    @media(max-width:650px){
+      .pop{
+        width: 200px;
+        height: 60px;
+      }
+    }
+    @media(max-width:560px){
+      .pop{
+        width: 150px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- nav  -->
+  <div class="nav d-flex py-4 flex-column justify-content-start align-items-center">
+    <img src="images/logo.png" class="logo" alt="">
+    <div class="d-flex gap-4 flex-column justify-content-center align-items-center">
+      <i class="fa-solid fa-house text-light icons"></i>
+      <i class="fa-solid fa-magnifying-glass icons"></i>
+      <i class="fa-solid fa-display icons"></i>
+      <i class="fa-solid fa-film icons"></i>
+      <i class="fa-solid fa-person-running icons"></i>
+      <i class="fa-solid fa-video icons"></i>
+      <i class="fa-solid fa-rectangle-list icons"></i>
+      <img src="images/smil.png" class="smil" alt="">
+    </div>
+  </div>
+
+  <!-- Body  -->
+  <div class="container-fluid gap-4 main d-flex flex-column align-items-center">
+
+    <!-- section1  -->
+    <div class="section1 m-4 gap-5 d-flex justify-content-start align-items-center">
+      <img src="images/sec1.png" class="sec1" alt="">
+      <div class="d-flex sec1r  flex-column justify-content-center align-items-start">
+        <div class="d-flex gap-3 mb-3 justify-content-center align-items-start">
+          <img src="images/jio.png" height="50px" class="d-md-none d-none d-sm-none d-lg-block rounded" alt="">
+          <div class="d-flex d-lg-block d-sm-none d-md-block flex-column justify-content-center align-items-start">
+            <p style="font-weight: 700;margin: 0;">Daredevil</p>
+            <p style="margin: 0;">Streaming From March 5</p>
+          </div>
+        </div>
+        <p class="d-none d-md-none d-none d-sm-none d-lg-block">Daredevil's secret life is on the line in this gripping
+          superhero drama !</p>
+        <button type="button" class="btn d-none d-sm-block d-md-block d-lg-block trailer btn-secondary"><i
+            class="fa-solid fa-play text-light me-3"></i>Trailer</button>
+      </div>
+    </div>
+
+    <!-- section2  -->
+    <div class="section2 d-flex flex-column justify-content-center ">
+      <video src="images/salaar.mp4" autoplay muted class="salaar" poster="salaarcover.png"></video>
+
+      <div class="section2all">
+
+        <!-- section2-1  -->
+        <div class="section2-1 d-flex align-items-start justify-content-center flex-column">
+          <img src="images/salaar.png" width="250px" alt="">
+          <h4 class="text-primary fs-6 mt-2">Kateramma Koduku</h4>
+          <p class="text-light mt-2">2023 <img src="images/space.png" width="7px" alt=""> A <img src="images/space.png" width="7px"
+              alt=""> 2h 54m <img src="images/space.png" width="7px" alt=""> Hindi</p>
+          <p class="text-light mt-2" style="margin: 0;">In the crime-infested Khansaar, Prince Varadha sets to ascend
+            the throne.</p>
+          <p class="text-light"> But a coup d'état is planned! And there's only one man to help reclaim power: Deva.</p>
+          <p class="text-light mt-2"><strong>Action | Thriller | Power Struggle | Dystopian</strong></p>
+          <button class="beginning mt-2 "><i class="fa-solid fa-clock-rotate-left mx-3"></i>Watch from
+            Beginning</button>
+          <div class="d-flex gap-3 align-items-end justify-content-start">
+            <button class="salaarwatch mt-3"><i class="fa-solid fa-play mx-3"></i>Resume</button>
+            <button class="plusbtn fs-3 text-center text-light">+</button>
+          </div>
+          <div class="pop d-flex">
+            <img src="images/ind.png" class="popsimg" alt="">
+            <img src="images/tukra.png" class="popsimg" alt="">
+            <img src="images/love.png" class="popsimg" alt="">
+            <img src="images/eyes.png" class="popsimg" alt="">
+            <img src="images/lock.png" class="popsimg" alt="">
+          </div>
+        </div>
+
+        <!-- section2-2  -->
+        <div class="section2-2 mt-5">
+          <h4 class="heading">ContinueWatching for Varun</h4>
+          <div class="suggetions p-4 d-flex gap-3">
+            <div class="continue">
+              <img src="images/sos.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">S/o Satyamurthy | 2015</h6>
+            </div>
+            <div class="continue">
+              <img src="images/cosalaar.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">Salaar-Part1 | 2023</h6>
+            </div>
+            <div class="continue">
+              <img src="images/msd.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">Ms.Dhoni-Untold Story | 2016</h6>
+            </div>
+            <div class="continue">
+              <img src="images/coind.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">NZ vs IND | Highlights</h6>
+            </div>
+            <div class="continue">
+              <img src="images/kartika.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">S1 E1082 | 3 Jul</h6>
+            </div>
+            <div class="continue">
+              <img src="images/neer.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">Neerja | 2016</h6>
+            </div>
+            <div class="continue">
+              <img src="images/csk.png" class="contimgs" alt="">
+              <i class="fa-solid fa-play iconp"></i>
+              <h6 style="color: white; margin-top: 10px;">CSK: The Handover</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- section2-3  -->
+        <div class="section2-2 mt-4">
+          <h4 class="heading">Top 10 Movies - Hindi</h4>
+          <div class="suggetions p-4">
+            <div class="d-flex my-5 gap-5">
+              <div class="topmovies top1"></div>
+              <div class="topmovies top2"></div>
+              <div class="topmovies top3"></div>
+              <div class="topmovies top4"></div>
+              <div class="topmovies top5"></div>
+              <div class="topmovies top6"></div>
+              <div class="topmovies top7"></div>
+              <div class="topmovies top8"></div>
+              <div class="topmovies top9"></div>
+              <div class="topmovies top10"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- section2-4  -->
+        <div class="section2-2">
+          <h4 class="heading">Non-Stop-Sports</h4>
+          <div class="suggetions p-4 d-flex gap-4">
+            <div class="Sports">
+              <img src="images/aus.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">ICC CT Priview, SF 1: Ind vs Aus</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/coind.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">NZ vs IND | Highlights</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/vk.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">RCB: The Royal Comeback</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/csk.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">CSK: The Handover</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/varun.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">5-Star Chakravarthy Sinks NZ</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/hp.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">Hardik's 45 vs NZ</h6>
+            </div>
+            <div class="Sports">
+              <img src="images/sa.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconn"></i>
+              <h6 style="color: white; margin-top: 10px;">SA vs ENG | Highlights</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- section-5  -->
+        <div class="section2-2">
+          <h4 class="heading">Latest Releases</h4>
+          <div class="suggetions py-3 d-flex gap-4">
+            <img src="images/inside.png" class="latestimgs" alt="">
+            <img src="images/dil.png" class="latestimgs" alt="">
+            <img src="images/under.png" class="latestimgs" alt="">
+            <img src="images/suits.png" class="latestimgs" alt="">
+            <img src="images/oscar.png" class="latestimgs" alt="">
+            <img src="images/kaush.png" class="latestimgs" alt="">
+            <img src="images/oops.png" class="latestimgs" alt="">
+            <img src="images/wild.png" class="latestimgs" alt="">
+            <img src="images/7days.png" class="latestimgs" alt="">
+            <img src="images/game.png" class="latestimgs" alt="">
+          </div>
+        </div>
+
+        <!-- section6  -->
+        <div class="section2-2">
+          <h4 class="heading">Live News</h4>
+          <div class="suggetions p-3 d-flex gap-4">
+            <div class="Sports">
+              <img src="images/cnbc.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconl"></i>
+              <div class=" live text-light d-flex justify-content-center align-items-center">
+                <img src="images/red.png" height="15px" alt="">
+                <p>LIVE</p>
+              </div>
+            </div>
+            <div class="Sports">
+              <img src="images/cnbc18.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconl"></i>
+              <div class=" live text-light d-flex justify-content-center align-items-center">
+                <img src="images/red.png" height="15px" alt="">
+                <p>LIVE</p>
+              </div>
+            </div>
+            <div class="Sports">
+              <img src="images/kerala.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconl"></i>
+              <div class=" live text-light d-flex justify-content-center align-items-center">
+                <img src="images/red.png" height="15px" alt="">
+                <p>LIVE</p>
+              </div>
+            </div>
+            <div class="Sports">
+              <img src="images/cnn.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconl"></i>
+              <div class=" live text-light d-flex justify-content-center align-items-center">
+                <img src="images/red.png" height="15px" alt="">
+                <p>LIVE</p>
+              </div>
+            </div>
+            <div class="Sports">
+              <img src="images/tamil.png" class="sportsimgs" alt="">
+              <i class="fa-solid fa-play iconl"></i>
+              <div class=" live text-light d-flex justify-content-center align-items-center">
+                <img src="images/red.png" height="15px" alt="">
+                <p>LIVE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- section7  -->
+        <div class="section2-2">
+          <h4 class="heading">Global English Hits</h4>
+          <div class="suggetions d-flex gap-4">
+            <img src="images/endgame.png" class="latestimgs" alt="">
+            <img src="images/titanic.png" class="latestimgs" alt="">
+            <img src="images/avatar.png" class="latestimgs" alt="">
+            <img src="images/infinitywar.png" class="latestimgs" alt="">
+            <img src="images/lionking.png" class="latestimgs" alt="">
+            <img src="images/deadpool.png" class="latestimgs" alt="">
+            <img src="images/kingdom.png" class="latestimgs" alt="">
+            <img src="images/joker.png" class="latestimgs" alt="">
+            <img src="images/jungle.png" class="latestimgs" alt="">
+            <img src="images/justice.png" class="latestimgs" alt="">
+          </div>
+        </div>
+
+        <!-- section8  -->
+        <div class="section2-2">
+          <h4 class="heading">Family Movies</h4>
+          <div class="suggetions d-flex gap-4">
+            <img src="images/family.png" class="latestimgs" alt="">
+            <img src="images/dad.png" class="latestimgs" alt="">
+            <img src="images/july.png" class="latestimgs" alt="">
+            <img src="images/ad.png" class="latestimgs" alt="">
+            <img src="images/bahu.png" class="latestimgs" alt="">
+            <img src="images/dook.png" class="latestimgs" alt="">
+            <img src="images/janata.png" class="latestimgs" alt="">
+            <img src="images/bale.png" class="latestimgs" alt="">
+          </div>
+        </div>
+
+        <!-- section9  -->
+        <div class="section2-2">
+          <h4 class="heading">Studios</h4>
+          <div class="suggetions p-4 d-flex gap-4">
+            <img src="images/hotstar.png" class="sportsimgs" alt="">
+            <img src="images/disney.png" class="sportsimgs" alt="">
+            <img src="images/marvel.png" class="sportsimgs" alt="">
+            <img src="images/national.png" class="sportsimgs" alt="">
+            <img src="images/hbo.png" class="sportsimgs" alt="">
+            <img src="images/star.png" class="sportsimgs" alt="">
+          </div>
+        </div>
+
+        <!-- section10 -->
+        <div class="section2-2">
+          <h4 class="heading">Popular Languages</h4>
+          <div class="suggetions p-4 d-flex gap-4">
+            <img src="images/english.png" class="sportsimgs" alt="">
+            <img src="images/telugu.png" class="sportsimgs" alt="">
+            <img src="images/hindi.png" class="sportsimgs" alt="">
+            <img src="images/tamilz.png" class="sportsimgs" alt="">
+            <img src="images/kannada.png" class="sportsimgs" alt="">
+            <img src="images/malaya.png" class="sportsimgs" alt="">
+            <img src="images/japan.png" class="sportsimgs" alt="">
+            <img src="images/korea.png" class="sportsimgs" alt="">
+            <img src="images/marati.png" class="sportsimgs" alt="">
+          </div>
+        </div>
+
+        <!-- section11 -->
+        <div class="section2-2">
+          <h4 class="heading">Popular Genres</h4>
+          <div class="suggetions p-4 d-flex gap-4">
+            <img src="images/romance.png" class="sportsimgs" alt="">
+            <img src="images/action.png" class="sportsimgs" alt="">
+            <img src="images/drama.png" class="sportsimgs" alt="">
+            <img src="images/horror.png" class="sportsimgs" alt="">
+            <img src="images/crime.png" class="sportsimgs" alt="">
+            <img src="images/sifi.png" class="sportsimgs" alt="">
+            <img src="images/comedy.png" class="sportsimgs" alt="">
+            <img src="images/history.png" class="sportsimgs" alt="">
+            <img src="images/familyz.png" class="sportsimgs" alt="">
+          </div>
+        </div>
+
+        <!-- footer  -->
+        <footer class="footer gap-5 d-flex flex-column justify-content-center align_items-center">
+          <div class="d-flex footerup justify-content-between align-items-start">
+            <div class="d-flex  flex-column justify-content-center align-items-start">
+              <p style="color: white; font-size: 20px;">Company</p>
+              <p style="font-size: 15px; color: #355ba2;">About Us</p>
+              <p style="font-size: 15px; color: #355ba2;">Careers</p>
+            </div>
+            <div class="d-flex  flex-column justify-content-center align-items-start">
+              <p style="color: white; font-size: 20px;">View Website in</p>
+              <p style="font-size: 15px; color: #355ba2;">English</p>
+            </div>
+            <div class="d-flex  flex-column justify-content-center align-items-start">
+              <p style="color: white; font-size: 20px;">Need Help ?</p>
+              <p style="font-size: 15px; color: #355ba2;">Visit Help Center</p>
+              <p style="font-size: 15px; color: #355ba2;">Share Feedback</p>
+            </div>
+            <div class="d-flex  flex-column justify-content-center align-items-center">
+              <p style="color: white; font-size: 20px;">Connect With Us</p>
+              <div class="d-flex gap-4">
+                <i class="fa-brands fa-facebook fs-3 text-light"></i>
+                <i class="fa-brands fa-x-twitter fs-3 text-light"></i>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex footerlower flex-column justify-content-center align-items-start">
+              <p style="font-size: 15px; color: #355ba2;"> © 2025 STAR. All Rights Reserved.</p>
+              <p style="font-size: 15px; color: #355ba2;"> Terms Of Use Privacy Policy FAQ</p>
+            </div>
+            <div class="d-flex apps gap-2 justify-content-start align-items-center">
+              <img src="images/google-playstore.png" height="50px" alt="">
+              <img src="images/ios-appstore.png" height="50px" alt="">
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="images/https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
