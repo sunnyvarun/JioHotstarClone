@@ -23,41 +23,63 @@
 
     /* nav  */
     .nav {
-      width: 7vw;
       height: 100vh;
       position: fixed;
       left: 0;
       top: 0;
-      background-color: rgb(0, 0, 0);
+      background: linear-gradient(to right, black, black,transparent);
+      z-index: 1;
     }
 
     .logo {
       width: 50px;
-      margin-bottom: 120px;
+      margin-bottom: 230px;
     }
 
-    .icons {
-      font-size: 17px;
-      color: gray;
-      height: 30px;
-      cursor: pointer;
+    .smil{
+      height: 20px;
+      
     }
-
-    .icons:hover {
-      font-size: 20px;
+    .items{
+      position: relative;
+      left: 55px;
+    }
+    .items{
+      .text{
+        opacity: 0;
+      }
+    }
+    .items:hover{
+      .text{
+        opacity: 1;
+        transition: 0.9s all ease;
+      }
+    }
+    .icons{
+      height: 100%;
+      gap: 30px;
+      padding: 0;
+    }
+    .icons:hover{
       color: white;
       transition: 0.1s all ease;
+      .icon{
+        font-size: 19px;
+      }
+      .smil{
+        width:21px;
+      }
     }
-
-    .smil {
-      height: 20px
+    .icon{
+      font-size: 17px;
     }
-
-    .smil:hover {
-      height: 25px
+    .text{
+      font-size: 18px;
+      margin: 0;
+      text-shadow: 10px 0 30px black;
     }
-
-    /* Body  */
+    
+    /* Main  */
     .main {
       width: 97vw;
       float: right;
@@ -108,7 +130,7 @@
       border-radius: 20px;
     }
 
-    /* section2all  */
+    /* section2all */
     .section2all {
       width: 90vw;
       min-height: 400px;
@@ -166,11 +188,14 @@
     .popsimg {
       width: 75px;
       cursor: pointer;
+      opacity: 0.5;
     }
 
     .popsimg:hover {
       scale: 1.1;
       transition: 0.2s all ease;
+      opacity: 1;
+      border: 1px solid white;
     }
 
     /* section2-2  */
@@ -457,20 +482,45 @@
   </style>
 </head>
 
-<body>
+<body class="bg-black">
 
   <!-- nav  -->
   <div class="nav d-flex py-4 flex-column justify-content-start align-items-center">
     <img src="images/logo.png" class="logo" alt="">
-    <div class="d-flex gap-4 flex-column justify-content-center align-items-center">
-      <i class="fa-solid fa-house text-light icons"></i>
-      <i class="fa-solid fa-magnifying-glass icons"></i>
-      <i class="fa-solid fa-display icons"></i>
-      <i class="fa-solid fa-film icons"></i>
-      <i class="fa-solid fa-person-running icons"></i>
-      <i class="fa-solid fa-video icons"></i>
-      <i class="fa-solid fa-rectangle-list icons"></i>
-      <img src="images/smil.png" class="smil" alt="">
+    <div class="d-flex flex-column items  text-secondary  justify-content-center align-items-start gap-4">
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-house text-light icon"></i>
+        <p class="text text-light">Home</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-magnifying-glass icon"></i>
+        <p class="text ">Search</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-display icon"></i>
+        <p class="text ">TV</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-film icon"></i>
+        <p class="text ">Movies</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-person-running icon"></i>
+        <p class="text ">Sports</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-video icon"></i>
+        <p class="text ">Sparks</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <i class="fa-solid fa-rectangle-list icon"></i>
+        <p class="text ">Category</p>
+      </div>
+      <div class="d-flex icons justify-content-center align-items-center">
+        <img src="images/smil.png" class="smil" alt="">
+        <p class="text ">My Space</p>
+      </div>
+      
     </div>
   </div>
 
